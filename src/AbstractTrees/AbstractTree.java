@@ -8,6 +8,8 @@ package AbstractTrees;
 import Interfaces.Position;
 import java.util.Iterator;
 import Interfaces.Tree;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Represents an abstract tree and its methods
@@ -41,6 +43,44 @@ public abstract class AbstractTree<T> implements Tree<T> {
         }
         return h;
     }
+    
+    private class ElementIterator implements Iterator<T>{
+        Iterator<Position<T>>posIterator=positions().iterator();
+
+        @Override
+        public boolean hasNext() {
+           return posIterator.hasNext();
+        }
+
+        @Override
+        public T next() {
+           return posIterator.next().getElement();
+        }
+
+        @Override
+        public void remove() {
+            Iterator.super.remove(); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
+    
+    public Iterable<Position<T>> preorder(){
+        List<Position<T>> snapshot= new ArrayList<>();
+        if(isEmpty()!){
+            for (Node<T> child:children(snapshot)){
+                preorder()
+            }
+        }
+                
+    }
+    
+    private void preorderSubTree(Position<T> p, List<Position<T>> snapshot){
+        snapshot.add(p);
+        for (Object child: children(p)) {
+            preorderSubTree((Position<T>)child, snapshot);
+        }
+    }
+    
+    
     @Override
     public Position<T> root() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -115,7 +155,7 @@ public abstract class AbstractTree<T> implements Tree<T> {
 
     @Override
     public Iterable<Position<T>> positions() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      return preorder();
     }
 
   
