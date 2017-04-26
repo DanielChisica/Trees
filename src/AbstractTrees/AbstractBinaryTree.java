@@ -65,4 +65,18 @@ public abstract class AbstractBinaryTree<T> extends AbstractTree implements Bina
         }
         return childs;
     }
+    
+    private void inorderSubTree(Position<T> p, List<Position<T>> snapshot){
+        if(left(p)!=null){
+            snapshot.add(left(p));
+        }
+        else{
+            snapshot.add(parent(p));
+        }
+        if(right(p)!=null){
+            snapshot.add(right(p));
+        }
+        
+    }
+    
 }
