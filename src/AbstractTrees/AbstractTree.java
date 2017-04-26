@@ -63,15 +63,24 @@ public abstract class AbstractTree<T> implements Tree<T> {
         }
     }
     
-    public Iterable<Position<T>> preorder(){
+    public Iterable<Position<T>> preOrder(){
         List<Position<T>> snapshot= new ArrayList<>();
-        if(isEmpty()!){
-            for (Node<T> child:children(snapshot)){
-                preorder()
-            }
+        if(!isEmpty()){
+            preorderSubTree(root(), snapshot);
         }
+        return snapshot;
                 
     }
+    
+    public Iterable<Position<T>> postOrder(){
+        List<Position<T>> snapshot= new ArrayList<>();
+        if(!isEmpty()){
+            preorderSubTree(root(), snapshot);
+        }
+        return snapshot;
+                
+    }
+    
     
     private void preorderSubTree(Position<T> p, List<Position<T>> snapshot){
         snapshot.add(p);
@@ -155,7 +164,7 @@ public abstract class AbstractTree<T> implements Tree<T> {
 
     @Override
     public Iterable<Position<T>> positions() {
-      return preorder();
+      return preOrder();
     }
 
   
