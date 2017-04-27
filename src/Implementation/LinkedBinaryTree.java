@@ -123,7 +123,7 @@ public class LinkedBinaryTree<T> extends AbstractBinaryTree<T> {
         return root;
     }
 
-    public Position<T> addLeft(T element, Position<T> p) throws IllegalArgumentException {
+        public Position<T> addLeft(T element, Position<T> p) throws IllegalArgumentException {
         Node<T> parent = validate(p);
         if (parent.getLeft() != null) {
             throw new IllegalArgumentException("Ya hay un izquierdo");
@@ -274,7 +274,7 @@ public class LinkedBinaryTree<T> extends AbstractBinaryTree<T> {
     
     @Override
     public Iterator iterator() {
-       
+       throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
