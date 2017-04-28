@@ -17,12 +17,6 @@ import java.util.function.Consumer;
  * @author Daniel Jiménez
  */
 public class LinkedBinaryTree<T> extends AbstractBinaryTree<T> {
-
-    @Override
-    public Position brother(Position p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     /**
      * Class Node
      *
@@ -116,7 +110,7 @@ public class LinkedBinaryTree<T> extends AbstractBinaryTree<T> {
 
     public Position<T> addRoot(T element) throws IllegalStateException {
         if (!isEmpty()) {
-            throw new IllegalStateException("El arbol no esta vacio");
+            throw new IllegalStateException("The tree isn't empty");
         }
         root = createNode(element, null, null, null);
         size = 1;
@@ -126,7 +120,7 @@ public class LinkedBinaryTree<T> extends AbstractBinaryTree<T> {
         public Position<T> addLeft(T element, Position<T> p) throws IllegalArgumentException {
         Node<T> parent = validate(p);
         if (parent.getLeft() != null) {
-            throw new IllegalArgumentException("Ya hay un izquierdo");
+            throw new IllegalArgumentException("There's a left");
         }
 
         Node<T> child = createNode(element, parent, null, null);
@@ -244,42 +238,21 @@ public class LinkedBinaryTree<T> extends AbstractBinaryTree<T> {
         Node<T> newnode = validate(p);
         return newnode.getFather();
     }
-
-    @Override
-    public boolean isInternal(Position p) throws IllegalArgumentException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean isExternal(Position p) throws IllegalArgumentException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
     @Override
     public boolean isRoot(Position p) throws IllegalArgumentException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       Node<T> nde=validate(p);
+       return nde.getFather()==null;
     }
 
     @Override
     public int size() {
         return size;
     }
-
-    @Override
-    public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
     
     @Override
     public Iterator iterator() {
        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public Iterable positions() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
