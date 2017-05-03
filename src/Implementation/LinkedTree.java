@@ -7,6 +7,7 @@ package Implementation;
 
 import AbstractTrees.AbstractTree;
 import Interfaces.*;
+import java.util.Iterator;
 import java.util.List;
 /**
  *
@@ -61,6 +62,32 @@ public class LinkedTree<T> extends AbstractTree{
         
     }
     
+      private class ElementIterator implements Iterator<T> {
+
+        Iterator<Position<T>> posIterator = positions().iterator();
+
+        @Override
+        public boolean hasNext() {
+            return posIterator.hasNext();
+        }
+
+        @Override
+        public T next() {
+            return posIterator.next().getElement();
+        }
+
+        @Override
+        public void remove() {
+            Iterator.super.remove();
+        }
+
+    }
+    
+    @Override
+    public Iterator iterator() {
+        return new ElementIterator();
+    }  
+      
     public Position<T> addRoot(T element){
           if (!isEmpty()) {
             throw new IllegalStateException("The tree isn't empty");

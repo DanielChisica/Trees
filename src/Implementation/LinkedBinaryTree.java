@@ -69,7 +69,7 @@ public class LinkedBinaryTree<T> extends AbstractBinaryTree<T> {
     }
 
     protected Node<T> root = null;
-    int size;
+    int size=0;
 
     public LinkedBinaryTree() {
     }
