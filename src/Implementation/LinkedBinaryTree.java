@@ -25,7 +25,7 @@ public class LinkedBinaryTree<T> extends AbstractBinaryTree<T> {
     protected static class Node<T> implements Position<T> {
 
         private T element;
-        private Node<T> father, left, right;
+        public Node<T> father, left, right;
 
         public Node(T element, Node<T> above, Node<T> leftChild, Node<T> rightChild) {
             this.element = element;
