@@ -96,9 +96,6 @@ public class LinkedBinaryTree<T> extends AbstractBinaryTree<T> {
      * @throws IllegalArgumentException The exceptions that could be
      */
     protected Node<T> validate(Position<T> p) throws IllegalArgumentException {
-        if (!(p instanceof Node)) {
-            throw new IllegalArgumentException("Isn't a valid position");
-        }
 
         Node<T> e = (Node<T>) p;
 

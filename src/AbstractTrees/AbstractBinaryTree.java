@@ -22,6 +22,7 @@ public abstract class AbstractBinaryTree<T> extends AbstractTree implements Bina
      * @return
      * @throws IllegalArgumentException 
      */
+    @Override
     public Position<T> brother(Position p) throws IllegalArgumentException {
         Position<T> father = parent(p);
         if (father == null) {
@@ -54,7 +55,8 @@ public abstract class AbstractBinaryTree<T> extends AbstractTree implements Bina
      * @param p The position to which its children is going to get
      * @return All children
      */
-    public Iterable<Position<T>> childs(Position p) {
+    @Override
+    public Iterable<Position<T>> children(Position p) {
         List<Position<T>> childs = new ArrayList<>(2);
         if (left(p) != null) {
             childs.add(left(p));
