@@ -10,6 +10,8 @@ import java.util.Iterator;
 import Interfaces.Tree;
 import java.util.ArrayList;
 import java.util.List;
+import Implementation.LinkedTree;
+
 
 /**
  * Represents an abstract tree and its methods

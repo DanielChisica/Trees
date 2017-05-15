@@ -68,7 +68,13 @@ public abstract class AbstractBinaryTree<T> extends AbstractTree implements Bina
         return childs;
     }
     
-    private void inorderSubTree(Position<T> p, List<Position<T>> snapshot){
+    /**
+     * Organizes a list with the in-order tree traversal
+     * @param p The initial position of the traversal
+     * @param snapshot The List with the positions
+     * @return The list with the in-order tree traversal
+     */
+    private List<Position<T>> inorderSubTree(Position<T> p, List<Position<T>> snapshot){
         if(left(p)!=null){
             snapshot.add(left(p));
         }
@@ -78,7 +84,7 @@ public abstract class AbstractBinaryTree<T> extends AbstractTree implements Bina
         if(right(p)!=null){
             snapshot.add(right(p));
         }
-        
+        return snapshot;
     }
     
 }

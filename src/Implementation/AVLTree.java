@@ -8,11 +8,12 @@ package Implementation;
 import Interfaces.Position;
 
 /**
- * The AVL Tree is named like this due to George Adelson-Velsky and Evgenii
+ * The AVL Tree is named like this due to Georgy Adelson-Velsky and Evgenii
  * Landis its inventors. This tree was the first data structure to be invented,
  * is a self-balancing binary tree.
  *
  * @author Daniel Jiménez Chísica
+ * @since 12 May 2017
  */
 public class AVLTree<T> extends LinkedBinaryTree<T> {
 
@@ -122,8 +123,8 @@ public class AVLTree<T> extends LinkedBinaryTree<T> {
                     Insert(position.left, element);
                 }
             }
-
         }
+        size++;
         return position;
     }
 
