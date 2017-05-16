@@ -99,11 +99,12 @@ public class AVLTree<T> extends LinkedBinaryTree<T> {
         simpleLeftRotation(p);
     }
 
+
     /**
      * Inserts a number on the AVL Tree according if is higher or smaller to the
      * positions already placed
-     *
-     * @param The initial position of the method
+     * 
+     * @param p initial position of the method
      * @param element The number to be placed
      * @return The position with the node of the element
      */

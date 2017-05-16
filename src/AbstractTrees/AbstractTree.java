@@ -22,8 +22,8 @@ public abstract class AbstractTree<T> implements Tree<T> {
     
     /**
      * Returns the integer with the depth of the tree
-     * @param p
-     * @return 
+     * @param p The position to evaluates its depth
+     * @return  An integer with its depth
      */
     public int depth(Position<T> p) {
         if (isRoot(p)) {
@@ -36,7 +36,7 @@ public abstract class AbstractTree<T> implements Tree<T> {
     /**
      * Returns an integer with the height value of the tree
      * @param p The position
-     * @return 
+     * @return An integer with the height
      */
     public int height(Position<T> p){
         int h=0;

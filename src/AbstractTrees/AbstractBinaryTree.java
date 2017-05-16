@@ -19,8 +19,8 @@ public abstract class AbstractBinaryTree<T> extends AbstractTree implements Bina
     /**
      * Returns the brother of a position
      * @param p The position to which its brother is going to get
-     * @return
-     * @throws IllegalArgumentException 
+     * @return The sibling
+     * @throws IllegalArgumentException Hasn't sibling 
      */
     @Override
     public Position<T> brother(Position p) throws IllegalArgumentException {
